@@ -9,7 +9,7 @@ func _on_playButton_pressed():
 	print("Jugar")
 
 func _on_journeyButton_pressed():
-	get_tree().change_scene("res://scene/journey.tscn")
+	get_tree().change_scene("res://scene/journeyScene.tscn")
 
 func _on_configButton_pressed():
 	get_tree().change_scene("res://scene/configScene.tscn")

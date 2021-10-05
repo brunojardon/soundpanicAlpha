@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://textures/background/stage-tutorial.png" type="Texture" id=1]
-[ext_resource path="res://scene/configScene.gd" type="Script" id=2]
+[ext_resource path="res://scene/scripts/configScene.gd" type="Script" id=2]
 [ext_resource path="res://musica/Prueba_n2.mp3" type="AudioStream" id=3]
 [ext_resource path="res://textures/icons/volumen.png" type="Texture" id=4]
 [ext_resource path="res://textures/icons/mute.png" type="Texture" id=5]
@@ -74,5 +74,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="fullscreen" type="Button" parent="Control"]
+margin_left = 434.335
+margin_top = 194.505
+margin_right = 512.335
+margin_bottom = 214.505
+text = "Fullscreen"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="value_changed" from="Control/volumeBar" to="." method="_on_volumeBar_value_changed"]
 [connection signal="pressed" from="Control/return" to="." method="_on_return_pressed"]
+[connection signal="pressed" from="Control/fullscreen" to="." method="_on_fullscreen_pressed"]
