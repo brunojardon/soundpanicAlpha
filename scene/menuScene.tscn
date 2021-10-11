@@ -1,12 +1,26 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scene/scripts/buttons.gd" type="Script" id=1]
-[ext_resource path="res://textures/background/stage-tutorial.png" type="Texture" id=2]
-[ext_resource path="res://textures/background/Sound__Panic.png" type="Texture" id=3]
+[ext_resource path="res://textures/background/menuBackground.png" type="Texture" id=2]
+[ext_resource path="res://textures/buttons/opcions_button.png" type="Texture" id=3]
 [ext_resource path="res://scene/scripts/menuScene.gd" type="Script" id=4]
+[ext_resource path="res://textures/buttons/play_button.png" type="Texture" id=5]
+[ext_resource path="res://textures/buttons/exit_button.png" type="Texture" id=6]
+[ext_resource path="res://textures/background/soundPanicTitile.png" type="Texture" id=7]
 
 [node name="Menu" type="Node2D"]
 script = ExtResource( 4 )
+
+[node name="menuBackground" type="Sprite" parent="."]
+position = Vector2( 1.25267, 0.583048 )
+scale = Vector2( 0.948148, 0.857884 )
+texture = ExtResource( 2 )
+offset = Vector2( 538.766, 348.707 )
+
+[node name="Sprite" type="Sprite" parent="menuBackground"]
+position = Vector2( 210.005, 155.698 )
+scale = Vector2( 2.36658, 1.95315 )
+texture = ExtResource( 7 )
 
 [node name="buttons" type="Control" parent="."]
 margin_right = 1024.0
@@ -16,64 +30,40 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Sprite" type="Sprite" parent="buttons"]
-position = Vector2( 613.969, 104.736 )
-scale = Vector2( 0.40734, 0.40734 )
-texture = ExtResource( 3 )
-
-[node name="MainMenu" type="VBoxContainer" parent="buttons"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -104.0
-margin_top = -34.5
-margin_right = 104.0
-margin_bottom = 34.5
+[node name="playButton" type="Button" parent="buttons"]
+margin_left = 150.0
+margin_top = 310.771
+margin_right = 250.0
+margin_bottom = 360.771
+icon = ExtResource( 5 )
+flat = true
+expand_icon = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="playButton" type="Button" parent="buttons/MainMenu"]
-margin_right = 208.0
-margin_bottom = 20.0
-text = "Jugar"
-
-[node name="journeyButton" type="Button" parent="buttons/MainMenu"]
-margin_top = 24.0
-margin_right = 208.0
-margin_bottom = 44.0
-text = "Journey"
-
-[node name="configButton" type="Button" parent="buttons/MainMenu"]
-margin_top = 48.0
-margin_right = 208.0
-margin_bottom = 68.0
-text = "Configuracion"
+[node name="optionsButton" type="Button" parent="buttons"]
+margin_left = 136.507
+margin_top = 380.771
+margin_right = 266.507
+margin_bottom = 420.771
+icon = ExtResource( 3 )
+flat = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="exitButton" type="Button" parent="buttons/MainMenu"]
-margin_top = 72.0
-margin_right = 208.0
-margin_bottom = 92.0
-text = "Cerrar"
+[node name="exitButton" type="Button" parent="buttons"]
+margin_left = 155.0
+margin_top = 450.453
+margin_right = 245.0
+margin_bottom = 495.453
+icon = ExtResource( 6 )
+flat = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-
-[node name="stage-tutorial" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2( 511.994, 300.101 )
-rotation = 3.14159
-scale = Vector2( 0.511954, -0.500212 )
-texture = ExtResource( 2 )
-
-[connection signal="pressed" from="buttons/MainMenu/playButton" to="buttons" method="_on_playButton_pressed"]
-[connection signal="pressed" from="buttons/MainMenu/journeyButton" to="buttons" method="_on_journeyButton_pressed"]
-[connection signal="pressed" from="buttons/MainMenu/configButton" to="buttons" method="_on_configButton_pressed"]
-[connection signal="pressed" from="buttons/MainMenu/exitButton" to="buttons" method="_on_exitButton_pressed"]
+[connection signal="pressed" from="buttons/playButton" to="buttons" method="_on_playButton_pressed"]
+[connection signal="pressed" from="buttons/optionsButton" to="buttons" method="_on_optionsButton_pressed"]
+[connection signal="pressed" from="buttons/exitButton" to="buttons" method="_on_exitButton_pressed"]

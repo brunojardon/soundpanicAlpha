@@ -8,17 +8,19 @@
 [ext_resource path="res://scene/scripts/returnToMenu.gd" type="Script" id=6]
 [ext_resource path="res://textures/Proyectil.png" type="Texture" id=7]
 [ext_resource path="res://textures/wachines/Liannexpandido.png" type="Texture" id=8]
-[ext_resource path="res://scene/scripts/prota.gd" type="Script" id=9]
-[ext_resource path="res://scene/scripts/Proyectil.gd" type="Script" id=10]
+[ext_resource path="res://scene/scripts/proyectil.gd" type="Script" id=9]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 276.204
+radius = 233.495
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 23.6461
 
 [sub_resource type="CircleShape2D" id=3]
 radius = 16.1245
+
+[sub_resource type="SegmentShape2D" id=4]
+b = Vector2( -0.74649, 82.8098 )
 
 [node name="Battle" type="Node2D"]
 position = Vector2( -25, 0 )
@@ -44,19 +46,18 @@ texture = ExtResource( 4 )
 [node name="prota" type="KinematicBody2D" parent="."]
 position = Vector2( 209.489, 492.963 )
 scale = Vector2( 0.15, 0.15 )
-script = ExtResource( 9 )
 
 [node name="Sprite" type="Sprite" parent="prota"]
 texture = ExtResource( 2 )
 
 [node name="colisionProta" type="CollisionShape2D" parent="prota"]
-position = Vector2( -59.8167, -59.3245 )
+position = Vector2( -136.329, -70.3667 )
 shape = SubResource( 1 )
 
 [node name="proyectil" type="Area2D" parent="."]
-position = Vector2( 393.374, 481.666 )
+position = Vector2( 463.778, 481.815 )
 scale = Vector2( 0.5, 0.5 )
-script = ExtResource( 10 )
+script = ExtResource( 9 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -68,6 +69,7 @@ texture = ExtResource( 7 )
 shape = SubResource( 2 )
 
 [node name="aro" type="Area2D" parent="."]
+position = Vector2( 8.67645, 1.33484 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -81,6 +83,12 @@ texture = ExtResource( 5 )
 position = Vector2( 283.5, 481.5 )
 shape = SubResource( 3 )
 
+[node name="fail" type="Area2D" parent="."]
+
+[node name="colision" type="CollisionShape2D" parent="fail"]
+position = Vector2( 260.902, 375.521 )
+shape = SubResource( 4 )
+
 [node name="return" type="Button" parent="."]
 margin_left = 47.0
 margin_top = 30.0
@@ -92,7 +100,4 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[connection signal="area_entered" from="proyectil" to="prota" method="_on_proyectil_area_entered"]
-[connection signal="area_entered" from="aro" to="proyectil" method="_on_aro_area_entered"]
-[connection signal="area_exited" from="aro" to="proyectil" method="_on_aro_area_exited"]
 [connection signal="pressed" from="return" to="return" method="_on_return_pressed"]
