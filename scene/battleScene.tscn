@@ -39,7 +39,7 @@ scale = Vector2( 0.15, 0.15 )
 texture = ExtResource( 8 )
 
 [node name="railFrontal" type="Sprite" parent="sprites"]
-position = Vector2( 566.098, 481.301 )
+position = Vector2( 581.098, 481.301 )
 scale = Vector2( 1.75, 1 )
 texture = ExtResource( 4 )
 
@@ -55,7 +55,7 @@ position = Vector2( -136.329, -70.3667 )
 shape = SubResource( 1 )
 
 [node name="proyectil" type="Area2D" parent="."]
-position = Vector2( 463.778, 481.815 )
+position = Vector2( 389.964, 481.815 )
 scale = Vector2( 0.5, 0.5 )
 script = ExtResource( 9 )
 __meta__ = {
@@ -69,7 +69,7 @@ texture = ExtResource( 7 )
 shape = SubResource( 2 )
 
 [node name="aro" type="Area2D" parent="."]
-position = Vector2( 8.67645, 1.33484 )
+position = Vector2( -0.323551, 0.33484 )
 __meta__ = {
 "_edit_group_": true
 }
