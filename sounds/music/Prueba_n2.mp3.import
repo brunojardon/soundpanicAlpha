@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Prueba_n2.mp3-dbe198fbdcf0402c032d049686e7e1a6.mp3str"
+
+[deps]
+
+source_file="res://sounds/music/Prueba_n2.mp3"
+dest_files=[ "res://.import/Prueba_n2.mp3-dbe198fbdcf0402c032d049686e7e1a6.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

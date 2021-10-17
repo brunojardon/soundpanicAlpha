@@ -12,7 +12,7 @@
 script = ExtResource( 4 )
 
 [node name="menuBackground" type="Sprite" parent="."]
-position = Vector2( 1.25267, 0.583048 )
+position = Vector2( 1.25267, 1.58305 )
 scale = Vector2( 0.948148, 0.857884 )
 texture = ExtResource( 2 )
 offset = Vector2( 538.766, 348.707 )
