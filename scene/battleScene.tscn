@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://textures/background/LIANN_STAGEexpand.png" type="Texture" id=1]
 [ext_resource path="res://scene/scripts/prota.gd" type="Script" id=2]
@@ -6,9 +6,7 @@
 [ext_resource path="res://textures/railes/RailFrontal.png" type="Texture" id=4]
 [ext_resource path="res://textures/railes/hola.png" type="Texture" id=5]
 [ext_resource path="res://scene/scripts/returnToMenu.gd" type="Script" id=6]
-[ext_resource path="res://textures/Proyectil.png" type="Texture" id=7]
-[ext_resource path="res://scene/scripts/aro.gd" type="Script" id=8]
-[ext_resource path="res://scene/scripts/proyectil.gd" type="Script" id=9]
+[ext_resource path="res://scene/proyectil.tscn" type="PackedScene" id=7]
 
 [sub_resource type="StreamTexture" id=1]
 load_path = "res://.import/Liannexpandido.png-0bbc7afc345e9050c1534c94db7333c3.stex"
@@ -20,14 +18,16 @@ load_path = "res://.import/tengualrevez.png-783c6cad8e51daa81dc4818122aea490.ste
 [sub_resource type="CircleShape2D" id=3]
 radius = 211.211
 
-[sub_resource type="CapsuleShape2D" id=6]
+[sub_resource type="CapsuleShape2D" id=4]
 radius = 213.948
 
-[sub_resource type="CircleShape2D" id=4]
-radius = 16.1245
+[sub_resource type="GDScript" id=5]
+script/source = "extends Area2D
 
-[sub_resource type="CircleShape2D" id=5]
-radius = 23.6461
+"
+
+[sub_resource type="CircleShape2D" id=6]
+radius = 16.1245
 
 [node name="Battle" type="Node2D"]
 script = ExtResource( 3 )
@@ -67,12 +67,12 @@ scale = Vector2( 0.15, 0.15 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="protaArea"]
 position = Vector2( -89.8323, -39.5955 )
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="aro" type="Area2D" parent="."]
 position = Vector2( -0.75, 0.5 )
 collision_mask = 0
-script = ExtResource( 8 )
+script = SubResource( 5 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -85,22 +85,10 @@ offset = Vector2( 1.73242, 0.292847 )
 
 [node name="colision" type="CollisionShape2D" parent="aro"]
 position = Vector2( 283.5, 481.5 )
-shape = SubResource( 4 )
+shape = SubResource( 6 )
 
-[node name="proyectil" type="Area2D" parent="."]
-light_mask = 0
-position = Vector2( 397.223, 481.249 )
-scale = Vector2( 0.5, 0.5 )
-script = ExtResource( 9 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="proyectil"]
-texture = ExtResource( 7 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="proyectil"]
-shape = SubResource( 5 )
+[node name="proyectil" parent="." instance=ExtResource( 7 )]
+position = Vector2( 367.8, 481.345 )
 
 [node name="return" type="Button" parent="."]
 margin_left = 47.0
@@ -114,7 +102,6 @@ __meta__ = {
 }
 
 [connection signal="area_entered" from="protaArea" to="proyectil" method="_on_protaArea_area_entered"]
-[connection signal="area_entered" from="aro" to="proyectil" method="_on_aro_area_entered"]
-[connection signal="area_exited" from="aro" to="proyectil" method="_on_aro_area_exited"]
-[connection signal="body_entered" from="proyectil" to="prota" method="_on_proyectil_body_entered"]
+[connection signal="area_shape_entered" from="aro" to="proyectil" method="_on_aro_area_shape_entered"]
+[connection signal="area_shape_exited" from="aro" to="proyectil" method="_on_aro_area_shape_exited"]
 [connection signal="pressed" from="return" to="return" method="_on_return_pressed"]

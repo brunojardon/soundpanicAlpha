@@ -7,8 +7,6 @@ export var vida = 3
 
 
 func _on_proyectil_body_entered(body):
-	print(vida)
 	vida = salud - missKey
-	print(vida)
 	if vida <= 0:
 		queue_free()
