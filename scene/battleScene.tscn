@@ -15,11 +15,11 @@ load_path = "res://.import/Liannexpandido.png-0bbc7afc345e9050c1534c94db7333c3.s
 flags = 4
 load_path = "res://.import/tengualrevez.png-783c6cad8e51daa81dc4818122aea490.stex"
 
-[sub_resource type="SegmentShape2D" id=3]
-b = Vector2( -0.501587, 300.769 )
+[sub_resource type="CircleShape2D" id=3]
+radius = 211.211
 
-[sub_resource type="SegmentShape2D" id=4]
-b = Vector2( 0.41156, 314.356 )
+[sub_resource type="CapsuleShape2D" id=4]
+radius = 213.948
 
 [sub_resource type="GDScript" id=5]
 script/source = "extends Area2D
@@ -58,15 +58,15 @@ script = ExtResource( 2 )
 texture = SubResource( 2 )
 
 [node name="colisionProta" type="CollisionShape2D" parent="prota"]
-position = Vector2( 172.004, -218.699 )
+position = Vector2( -74.6624, -45.3662 )
 shape = SubResource( 3 )
 
 [node name="protaArea" type="Area2D" parent="."]
 position = Vector2( 209.489, 492.963 )
 scale = Vector2( 0.15, 0.15 )
 
-[node name="collisionBody" type="CollisionShape2D" parent="protaArea"]
-position = Vector2( 117.234, -227.532 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="protaArea"]
+position = Vector2( -89.8323, -39.5955 )
 shape = SubResource( 4 )
 
 [node name="aro" type="Area2D" parent="."]
@@ -88,7 +88,7 @@ position = Vector2( 283.5, 481.5 )
 shape = SubResource( 6 )
 
 [node name="proyectil" parent="." instance=ExtResource( 7 )]
-position = Vector2( 367.8, 481.345 )
+position = Vector2( 850.8, 481.345 )
 
 [node name="return" type="Button" parent="."]
 margin_left = 47.0
