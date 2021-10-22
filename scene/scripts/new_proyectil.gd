@@ -46,3 +46,4 @@ func _on_aro_area_entered(area):
 
 func _on_proyectil_area_shape_exited(area_id, area, area_shape, local_shape):
 	pass # Replace with function body.
+
