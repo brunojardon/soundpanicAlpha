@@ -3,7 +3,7 @@ extends Node2D
 var proyectil = preload("res://scene/proyectil.tscn")
 
 func _ready():
-	OS.set_window_title("Mecanica")
+	OS.set_window_title("Mecanica") #Coloca el titulo de ventana
 	
 
 func _on_Timer_timeout():
