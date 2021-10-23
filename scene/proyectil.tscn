@@ -4,17 +4,17 @@
 [ext_resource path="res://textures/props/Proyectil.png" type="Texture" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 22.4922
+radius = 23.168
 
 [node name="proyectil" type="Area2D"]
+scale = Vector2( 0.5, 0.5 )
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2( 0.5, 0.5 )
 shape = SubResource( 1 )
-
-[connection signal="area_shape_entered" from="." to="." method="_on_proyectil_area_shape_entered"]

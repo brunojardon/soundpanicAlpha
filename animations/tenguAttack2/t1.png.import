@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Proyectil.png-1af0d8672d456020c9465053c1dbcf8d.stex"
+path="res://.import/t1.png-a7fc7b2cb8d8b0124e8a25e30cee632d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/props/Proyectil.png"
-dest_files=[ "res://.import/Proyectil.png-1af0d8672d456020c9465053c1dbcf8d.stex" ]
+source_file="res://animations/tenguAttack2/t1.png"
+dest_files=[ "res://.import/t1.png-a7fc7b2cb8d8b0124e8a25e30cee632d.stex" ]
 
 [params]
 

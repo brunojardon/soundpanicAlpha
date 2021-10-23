@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tengualrevez.png-d9347ae6e8d9bdabf264087e9bc80eed.stex"
+path="res://.import/t3.png-3022ba76f6b0775f23caa7dcfdb49941.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/perso/tengualrevez.png"
-dest_files=[ "res://.import/tengualrevez.png-d9347ae6e8d9bdabf264087e9bc80eed.stex" ]
+source_file="res://animations/tenguAttack2/t3.png"
+dest_files=[ "res://.import/t3.png-3022ba76f6b0775f23caa7dcfdb49941.stex" ]
 
 [params]
 

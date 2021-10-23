@@ -10,7 +10,7 @@ config_version=4
 
 [application]
 
-config/name="Panic"
+config/name="Sound Panic"
 run/main_scene="res://scene/menuScene.tscn"
 config/icon="res://icon.png"
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tengujourneysprint3.png-85c3bf54f01178451f62e21f9bb88747.stex"
+path="res://.import/t5.png-8d99e29335d1bada62eee5a1c49e089c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://animations/tengujourneysprint3.png"
-dest_files=[ "res://.import/tengujourneysprint3.png-85c3bf54f01178451f62e21f9bb88747.stex" ]
+source_file="res://animations/tenguAttack2/t5.png"
+dest_files=[ "res://.import/t5.png-8d99e29335d1bada62eee5a1c49e089c.stex" ]
 
 [params]
 
