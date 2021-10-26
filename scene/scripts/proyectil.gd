@@ -18,14 +18,6 @@ func _process(delta): #Se ejecuta cada fram
 	else:
 		pass
 
-#func animates_player(direction: Vector2):
-#	if direction != Vector2.ZERO:
-#		# Play walk animation
-#		$Sprite.play("down_walk")
-#	else:
-#		# Play idle animation
-#		$Sprite.play("down_idle")
-
 func _on_aro_area_shape_exited(area_id, area, area_shape, local_shape):
 	dentro = false #Proyectil fuera de aro
 
