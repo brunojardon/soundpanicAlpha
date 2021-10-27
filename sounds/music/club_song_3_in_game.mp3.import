@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/club_song_3_in_game.mp3-6bfaf3150ecc00e6292326bfad2515bc.mp3str"
+
+[deps]
+
+source_file="res://sounds/music/club_song_3_in_game.mp3"
+dest_files=[ "res://.import/club_song_3_in_game.mp3-6bfaf3150ecc00e6292326bfad2515bc.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

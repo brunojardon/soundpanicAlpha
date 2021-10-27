@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/sin_terminar_3.mp3-5a86ca1b29defa728a005eb1476290be.mp3str"
+
+[deps]
+
+source_file="res://sounds/music/sin_terminar_3.mp3"
+dest_files=[ "res://.import/sin_terminar_3.mp3-5a86ca1b29defa728a005eb1476290be.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

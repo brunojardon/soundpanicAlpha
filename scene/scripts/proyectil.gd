@@ -15,7 +15,7 @@ func _process(delta): #Se ejecuta cada frame
 		salud = salud + 10 #Se suma 10 de salud
 		print("La salud es ",salud)
 		queue_free() #Se elimina el proyectil
-
+    
 func _on_proyectil_area_exited(aro):
 	dentro=false
 	pass # Replace with function body.
