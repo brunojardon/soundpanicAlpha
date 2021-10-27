@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Nosense_1.mp3-cda6d6939d3ddfd1ebb862482a8be305.mp3str"
+
+[deps]
+
+source_file="res://sounds/music/Nosense_1.mp3"
+dest_files=[ "res://.import/Nosense_1.mp3-cda6d6939d3ddfd1ebb862482a8be305.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
