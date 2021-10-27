@@ -1,13 +1,14 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://textures/background/LIANN_STAGEexpand.png" type="Texture" id=1]
 [ext_resource path="res://scene/scripts/prota.gd" type="Script" id=2]
 [ext_resource path="res://scene/scripts/battleScene.gd" type="Script" id=3]
 [ext_resource path="res://textures/railes/RailFrontal.png" type="Texture" id=4]
-[ext_resource path="res://textures/railes/hola.png" type="Texture" id=5]
+[ext_resource path="res://scene/prueba de proyectil.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scene/scripts/returnToMenu.gd" type="Script" id=6]
-[ext_resource path="res://scene/proyectil.tscn" type="PackedScene" id=7]
+[ext_resource path="res://animations/tenguAttack/t10.png" type="Texture" id=7]
 [ext_resource path="res://animations/tenguAttack/tenguAttack.tres" type="SpriteFrames" id=8]
+[ext_resource path="res://scene/protaArea.gd" type="Script" id=10]
 
 [sub_resource type="StreamTexture" id=1]
 load_path = "res://.import/Liannexpandido.png-0bbc7afc345e9050c1534c94db7333c3.stex"
@@ -18,14 +19,13 @@ b = Vector2( 0, 60 )
 [sub_resource type="SegmentShape2D" id=3]
 b = Vector2( 0, 60 )
 
-[sub_resource type="CircleShape2D" id=4]
-radius = 12.9473
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 36.6319, 25.9688 )
 
 [node name="Battle" type="Node2D"]
 script = ExtResource( 3 )
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 2.0
 autostart = true
 
 [node name="sprites" type="Node2D" parent="."]
@@ -64,31 +64,27 @@ shape = SubResource( 2 )
 [node name="protaArea" type="Area2D" parent="."]
 position = Vector2( 206.963, 492.893 )
 scale = Vector2( 0.15, 0.15 )
+script = ExtResource( 10 )
 
 [node name="protaAreaColision" type="CollisionShape2D" parent="protaArea"]
 position = Vector2( 263.665, -400 )
 scale = Vector2( 8, 13 )
 shape = SubResource( 3 )
 
-[node name="aro" type="Area2D" parent="."]
-position = Vector2( -0.75, 0.5 )
-collision_mask = 0
-__meta__ = {
-"_edit_group_": true
-}
+[node name="bloque" type="Area2D" parent="."]
+position = Vector2( 228.863, 397.428 )
 
-[node name="aroSprite" type="Sprite" parent="aro"]
-position = Vector2( 284.067, 481.318 )
-scale = Vector2( 0.25, 0.258035 )
-texture = ExtResource( 5 )
-offset = Vector2( 1.73242, 0.292847 )
+[node name="Sprite" type="Sprite" parent="bloque"]
+position = Vector2( 86.5212, 77.5112 )
+scale = Vector2( 1.13469, 0.760327 )
+texture = ExtResource( 7 )
 
-[node name="colision" type="CollisionShape2D" parent="aro"]
-position = Vector2( 284.5, 481.5 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bloque"]
+position = Vector2( 89.9459, 85.6552 )
 shape = SubResource( 4 )
 
-[node name="proyectil" parent="." instance=ExtResource( 7 )]
-position = Vector2( 382.053, 482.051 )
+[node name="pelota" parent="." instance=ExtResource( 5 )]
+position = Vector2( -37.194, 57.7022 )
 
 [node name="return" type="Button" parent="."]
 margin_left = 47.0
@@ -102,8 +98,5 @@ __meta__ = {
 }
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
-[connection signal="area_entered" from="protaArea" to="proyectil" method="_on_protaArea_area_entered"]
-[connection signal="area_shape_entered" from="aro" to="proyectil" method="_on_aro_area_shape_entered"]
-[connection signal="area_shape_exited" from="aro" to="proyectil" method="_on_aro_area_shape_exited"]
-[connection signal="body_entered" from="proyectil" to="prota" method="_on_proyectil_body_entered"]
+[connection signal="area_entered" from="protaArea" to="pelota" method="_on_protaArea_area_entered"]
 [connection signal="pressed" from="return" to="return" method="_on_return_pressed"]
