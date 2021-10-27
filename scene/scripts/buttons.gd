@@ -1,7 +1,7 @@
 extends Control
 
 func _on_journeyButton_pressed():
-	get_tree().change_scene("res://scene/world.tscn") #Cambia a la escena de posbatalla
+	get_tree().change_scene("res://scene/prueba queue.tscn") #Cambia a la escena de posbatalla
 	print("Journey")
 
 func _on_playButton_pressed():
