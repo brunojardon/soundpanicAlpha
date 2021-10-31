@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scripts/buttons.gd" type="Script" id=1]
 [ext_resource path="res://textures/background/menuBackground.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://textures/buttons/play_button.png" type="Texture" id=5]
 [ext_resource path="res://textures/buttons/exit_button.png" type="Texture" id=6]
 [ext_resource path="res://textures/background/soundPanicTitile.png" type="Texture" id=7]
+[ext_resource path="res://sounds/music/prueba_4.mp3" type="AudioStream" id=8]
 
 [node name="Menu" type="Node2D"]
 script = ExtResource( 4 )
@@ -18,8 +19,8 @@ texture = ExtResource( 2 )
 offset = Vector2( 538.766, 348.707 )
 
 [node name="gameTitle" type="Sprite" parent="menuBackground"]
-position = Vector2( 210.005, 155.698 )
-scale = Vector2( 2.36658, 1.95315 )
+position = Vector2( 232.353, 137.173 )
+scale = Vector2( 2.79635, 2.37416 )
 texture = ExtResource( 7 )
 
 [node name="buttons" type="Control" parent="."]
@@ -73,6 +74,10 @@ flat = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+autoplay = true
 
 [connection signal="pressed" from="buttons/journeyButton" to="buttons" method="_on_journeyButton_pressed"]
 [connection signal="pressed" from="buttons/playButton" to="buttons" method="_on_playButton_pressed"]

@@ -1,20 +1,25 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://animations/tenguAttack/tenguAttack.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://scripts/protaAnimated.gd" type="Script" id=2]
+[ext_resource path="res://scripts/prota.gd" type="Script" id=3]
 
 [sub_resource type="SegmentShape2D" id=1]
-b = Vector2( -0.0770264, 183.916 )
+b = Vector2( 0, 100 )
 
-[node name="prota" type="KinematicBody2D"]
+[node name="prota" type="Area2D"]
+script = ExtResource( 3 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="tenguAttackAnimate" type="AnimatedSprite" parent="."]
+[node name="protaAnimated" type="AnimatedSprite" parent="."]
+position = Vector2( -8, -36 )
 scale = Vector2( 2, 2 )
 frames = ExtResource( 1 )
 animation = "tenguAttack"
+script = ExtResource( 2 )
 
-[node name="protaColision" type="CollisionShape2D" parent="."]
-position = Vector2( 41.0102, -81.6577 )
+[node name="protaCollision" type="CollisionShape2D" parent="."]
+position = Vector2( 38, -75 )
 shape = SubResource( 1 )

@@ -1,5 +1,4 @@
 extends Node2D
 
 func _ready():
-	OS.set_window_title("Menu") #Coloca de titulo de ventana "Menu"
-	pass
+	OS.set_window_title("Neo Sound And Panic") #Coloca de titulo de ventana "Menu"

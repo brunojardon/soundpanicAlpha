@@ -1,38 +1,22 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://textures/background/LIANN_STAGEexpand.png" type="Texture" id=1]
-[ext_resource path="res://scene/props/aro.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scene/props/prota.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scripts/battleScene.gd" type="Script" id=3]
 [ext_resource path="res://textures/railes/RailFrontal.png" type="Texture" id=4]
-[ext_resource path="res://scene/props/prota.tscn" type="PackedScene" id=5]
+[ext_resource path="res://textures/railes/hola.png" type="Texture" id=5]
 [ext_resource path="res://textures/perso/Liannexpandido.png" type="Texture" id=6]
-[ext_resource path="res://scripts/battleScene.gd" type="Script" id=7]
-[ext_resource path="res://scene/props/bala.tscn" type="PackedScene" id=8]
-[ext_resource path="res://scripts/prota.gd" type="Script" id=9]
+[ext_resource path="res://scripts/life.gd" type="Script" id=7]
+[ext_resource path="res://textures/hud/barradevidafull.png" type="Texture" id=8]
 
-[sub_resource type="SegmentShape2D" id=1]
-b = Vector2( -0.205612, 184.27 )
-
-[sub_resource type="GDScript" id=2]
-script/source = "extends \"res://scripts/aro.gd\"
-
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = \"text\"
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-"
+[sub_resource type="CircleShape2D" id=1]
+radius = 26.2867
 
 [node name="battle" type="Node2D"]
-script = ExtResource( 7 )
+script = ExtResource( 3 )
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
 
 [node name="background" type="Sprite" parent="."]
 position = Vector2( -0.000248721, -0.000121627 )
@@ -40,30 +24,74 @@ scale = Vector2( 0.426639, 0.374988 )
 texture = ExtResource( 1 )
 offset = Vector2( 1200.04, 800.018 )
 
-[node name="boss" type="Sprite" parent="background"]
-position = Vector2( 2090.63, 1252.63 )
-scale = Vector2( 0.45, 0.45 )
-texture = ExtResource( 6 )
-
 [node name="RailFrontal" type="Sprite" parent="background"]
-position = Vector2( 1244.34, 1203.1 )
+position = Vector2( 1250, 1200 )
 scale = Vector2( 3.49076, 2.66675 )
 texture = ExtResource( 4 )
 
-[node name="prota" parent="." instance=ExtResource( 5 )]
-position = Vector2( 156.102, 452.153 )
-script = ExtResource( 9 )
+[node name="boss" type="Sprite" parent="background"]
+position = Vector2( 1981.99, 1170.7 )
+scale = Vector2( 0.452859, 0.411766 )
+texture = ExtResource( 6 )
 
-[node name="protArea" type="Area2D" parent="prota"]
-position = Vector2( 40, 0 )
+[node name="bloque" type="Area2D" parent="."]
+position = Vector2( 265, 450 )
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="protAreaCollision" type="CollisionShape2D" parent="prota/protArea"]
-position = Vector2( 0, -82 )
+[node name="Sprite" type="Sprite" parent="bloque"]
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bloque"]
 shape = SubResource( 1 )
 
-[node name="aro" parent="." instance=ExtResource( 3 )]
-position = Vector2( 265.451, 451.733 )
-script = SubResource( 2 )
+[node name="prota" parent="." instance=ExtResource( 2 )]
+position = Vector2( 150, 476 )
 
-[node name="bala" parent="." instance=ExtResource( 8 )]
-position = Vector2( 776.451, 450.551 )
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2( 263.902, 450.845 )
+gravity = Vector2( 100, 100 )
+initial_velocity = 1.0
+initial_velocity_random = 1.0
+angular_velocity = 720.0
+angular_velocity_random = 1.0
+orbit_velocity = 1.0
+orbit_velocity_random = 1.0
+linear_accel = 100.0
+linear_accel_random = 1.0
+
+[node name="Control" type="Control" parent="."]
+margin_left = 2.91038e-11
+margin_right = 1024.0
+margin_bottom = 599.0
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ProgressBar" type="ProgressBar" parent="Control"]
+margin_right = 1023.0
+margin_bottom = 55.0
+max_value = -100.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureProgress" type="TextureProgress" parent="Control"]
+margin_left = 2.0
+margin_top = 57.0
+margin_right = 1021.0
+margin_bottom = 97.0
+texture_progress = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="Control"]
+wait_time = 0.2
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="Control/Timer" to="Control" method="_on_Timer_timeout"]

@@ -1,12 +1,11 @@
 extends Node2D
 
-const spawn = preload("res://scene/props/bala.tscn")
+var proyectil = load("res://scene/props/bala.tscn")
 
-func _process(delta):
-	if Input.is_action_just_pressed("key-a"):
-		disparo()
+func _on_Timer_timeout():
+	var new_proyectil = proyectil.instance()
+	new_proyectil.position = Vector2(465, 450)
+	get_parent().add_child(new_proyectil)
 
-func disparo():
-	var spawnBala = spawn.instance()
-	spawnBala.position = Vector2(665.451, 451.733)
-	get_parent().add_child(spawnBala)
+func _ready():
+	OS.set_window_title("mecanica") #Coloca el titulo de ventana

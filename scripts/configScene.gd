@@ -9,7 +9,7 @@ func _on_volumeBar_value_changed(value):
 
 
 func _on_return_pressed():
-	get_tree().change_scene("res://scene/menuScene.tscn") #Cambia la escena al menu principal
+	get_tree().change_scene("res://scene/mains/mainMenuScene.tscn") #Cambia la escena al menu principal
 	print("Return")
 
 
