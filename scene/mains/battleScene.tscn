@@ -7,7 +7,7 @@
 [ext_resource path="res://textures/railes/hola.png" type="Texture" id=5]
 [ext_resource path="res://textures/perso/Liannexpandido.png" type="Texture" id=6]
 [ext_resource path="res://scripts/life.gd" type="Script" id=7]
-[ext_resource path="res://textures/hud/barradevidafull.png" type="Texture" id=8]
+[ext_resource path="res://scene/mains/pauseScene.tscn" type="PackedScene" id=8]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 26.2867
@@ -74,24 +74,12 @@ __meta__ = {
 [node name="ProgressBar" type="ProgressBar" parent="Control"]
 margin_right = 1023.0
 margin_bottom = 55.0
-max_value = -100.0
+value = 100.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureProgress" type="TextureProgress" parent="Control"]
-margin_left = 2.0
-margin_top = 57.0
-margin_right = 1021.0
-margin_bottom = 97.0
-texture_progress = ExtResource( 8 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Timer" type="Timer" parent="Control"]
-wait_time = 0.2
-autostart = true
+[node name="pausa" parent="." instance=ExtResource( 8 )]
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
-[connection signal="timeout" from="Control/Timer" to="Control" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Timer" to="Control" method="_on_Timer_timeout"]

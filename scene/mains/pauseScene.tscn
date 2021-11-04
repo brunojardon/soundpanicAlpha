@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scripts/control.gd" type="Script" id=1]
+
+[node name="pausa" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+pause_mode = 2
+visible = false
+margin_right = 1024.0
+margin_bottom = 600.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+margin_right = 1024.0
+margin_bottom = 600.0
+color = Color( 0, 0, 0, 0.494118 )

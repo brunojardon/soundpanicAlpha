@@ -24,10 +24,10 @@ __meta__ = {
 }
 
 [node name="volumeBar" type="HSlider" parent="Control"]
-margin_left = 369.314
-margin_top = 225.406
-margin_right = 586.313
-margin_bottom = 241.406
+margin_left = 369.0
+margin_top = 225.0
+margin_right = 586.0
+margin_bottom = 241.0
 min_value = -78.065
 max_value = 0.0
 __meta__ = {

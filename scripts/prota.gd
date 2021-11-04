@@ -1,7 +1,7 @@
 extends Area2D
 
 export var salud = 100
-export var misskey = 50
+export var misskey = 25
 
 func _ready():
 	connect("area_entered", self, "losseLife")
@@ -14,4 +14,3 @@ func losseLife(object):
 	salud = salud - misskey
 	if salud <= 0:
 		queue_free()
-
