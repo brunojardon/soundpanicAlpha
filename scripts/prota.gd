@@ -1,7 +1,7 @@
 extends Area2D
 
 export var salud = 100
-export var misskey = 50
+export var misskey = 25
 
 func _ready():
 	connect("area_entered", self, "losseLife")
@@ -15,4 +15,6 @@ func losseLife(object):
 	print(salud)
 	if salud <= 0:
 		queue_free()
+
 		get_tree().change_scene("res://scene/mains/pantalla de perdida.tscn")
+
