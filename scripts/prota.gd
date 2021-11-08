@@ -12,6 +12,7 @@ func error(object):
 
 func losseLife(object):
 	salud = salud - misskey
+	print(salud)
 	if salud <= 0:
 		queue_free()
-
+		get_tree().change_scene("res://scene/mains/pantalla de perdida.tscn")

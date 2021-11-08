@@ -3,6 +3,7 @@ extends Area2D
 var dentro=false
 var movimiento=Vector2()
 export var velocidadDeProyectil = 200
+
 func _ready():
 	pass
 
