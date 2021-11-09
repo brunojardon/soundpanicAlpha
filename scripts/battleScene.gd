@@ -12,8 +12,6 @@ func _on_Timer_timeout():
 func _ready():
 	OS.set_window_title("mecanica") #Coloca el titulo de ventana
 
-
-
 func _on_bloque_area_entered(area):
 	i=i+1
 	cura=cura+1
@@ -22,7 +20,6 @@ func _on_bloque_area_entered(area):
 		curar()
 	if i==15:
 		print("Termina la batalla")
-		
 
 func curar():
 	print("Se cura")

@@ -1,4 +1,4 @@
 extends Control
 
-func _on_Timer_timeout():
-	$ProgressBar.value += -10
+func _on_musicTimer_timeout():
+	$ProgressBar.value += 1
