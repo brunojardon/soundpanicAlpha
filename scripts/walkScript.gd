@@ -37,3 +37,5 @@ func _physics_process(delta):
 func delay():
 	timer.set_wait_time(1)
 	timer.start()
+
+
