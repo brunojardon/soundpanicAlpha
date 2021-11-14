@@ -14,7 +14,6 @@ func _on_ready():
 func _on_espada_body_entered(body):
 	espada=true
 
-
 func _physics_process(delta):
 	var input_vector = Vector2.ZERO
 	input_vector.x = Input.get_action_strength("derecha") - Input.get_action_strength("izquierda")

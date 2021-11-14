@@ -18,8 +18,9 @@ func _on_bloque_area_entered(area):
 	print(i)
 	if cura==10:
 		curar()
-	if i==15:
+	if i==1062:
 		print("Termina la batalla")
+		get_tree().change_scene("res://scene/mains/journeyScene.tscn")
 
 func curar():
 	print("Se cura")
