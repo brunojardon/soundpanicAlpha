@@ -13,8 +13,8 @@
 
 [resource]
 animations = [ {
-"frames": [ ExtResource( 1 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 7 ), ExtResource( 9 ), ExtResource( 8 ), ExtResource( 2 ), ExtResource( 10 ) ],
-"loop": true,
+"frames": [ ExtResource( 1 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 7 ), ExtResource( 9 ), ExtResource( 8 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 10 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 7 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 1 ) ],
+"loop": false,
 "name": "tenguAttack",
 "speed": 10.0
 } ]

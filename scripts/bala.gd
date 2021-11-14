@@ -13,7 +13,7 @@ func _on_proyectil_area_entered(bloque):
 func _process(delta):
 	movimiento.x = -velocidadDeProyectil
 	position += movimiento * delta
-	if Input.is_action_just_pressed("key-a") and dentro==true:
+	if Input.is_action_just_pressed("key-e") and dentro==true:
 		queue_free()
 
 func _on_proyectil_area_exited(bloque):

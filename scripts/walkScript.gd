@@ -4,7 +4,7 @@ const acceleration = 400
 const maxSpeed = 70
 const friction = 500
 var velocity = Vector2.ZERO
-var espada=false
+var espada= global.espada
 var timer
 onready var animation=$AnimatedSprite
 
