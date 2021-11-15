@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://scene/props/espada.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scene/props/tengu(prota)journey.tscn" type="PackedScene" id=2]
@@ -14,7 +14,9 @@
 [ext_resource path="res://sounds/music/sin_terminar_5.mp3" type="AudioStream" id=12]
 [ext_resource path="res://scripts/piedras2.gd" type="Script" id=13]
 [ext_resource path="res://scripts/bloqueodezona.gd" type="Script" id=14]
-[ext_resource path="res://textures/props/cajitafelizuwu.png" type="Texture" id=15]
+[ext_resource path="res://textures/props/bloque.png" type="Texture" id=15]
+[ext_resource path="res://sounds/music/journey_tranquilon.mp3" type="AudioStream" id=16]
+[ext_resource path="res://scripts/musica2.gd" type="Script" id=17]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 10.6987
@@ -56,6 +58,10 @@ polygon = PoolVector2Array( 8.40558, 5.34474, 13.5646, 13.6786, 17.8093, 19.2476
 
 [node name="piedras2" type="Area2D" parent="."]
 script = ExtResource( 13 )
+
+[node name="Timer" type="Timer" parent="piedras2"]
+wait_time = 5.0
+one_shot = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="piedras2"]
 position = Vector2( 841.102, 320.465 )
@@ -117,15 +123,12 @@ polygon = PoolVector2Array( -64, 4, 151, -60.5, 152.5, -96.5, 226.5, -104, 282, 
 [node name="cancionAmbiente" type="AudioStreamPlayer2D" parent="musica"]
 stream = ExtResource( 12 )
 
-[node name="prota" parent="." instance=ExtResource( 2 )]
-position = Vector2( 99.0382, 301.915 )
-
 [node name="bloqueodezona" type="Area2D" parent="."]
 script = ExtResource( 14 )
 
 [node name="Sprite" type="Sprite" parent="bloqueodezona"]
-position = Vector2( 484.337, 166.42 )
-scale = Vector2( 0.962245, 0.0891614 )
+position = Vector2( 487.998, 162.057 )
+scale = Vector2( 0.13724, 0.110018 )
 texture = ExtResource( 15 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bloqueodezona"]
@@ -139,10 +142,26 @@ shape = SubResource( 3 )
 position = Vector2( 405.544, 170.837 )
 polygon = PoolVector2Array( 23.5, -2, 45.8432, -6.24643, 73.8748, -5.57901, 128, -2, 136.509, 0.584122, 71.5389, -2.24191, 61.8613, -0.907059 )
 
+[node name="prota" parent="." instance=ExtResource( 2 )]
+position = Vector2( 99.0382, 301.915 )
+
+[node name="musica2" type="Area2D" parent="."]
+script = ExtResource( 17 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="musica2"]
+position = Vector2( 66.8904, 324.766 )
+polygon = PoolVector2Array( -54.9551, 17.4677, -53.7646, -6.74014, -10.9048, -3.76376, 17.6277, 19.6701, 4.59382, 36.9084, 4.17337, 59.6127, 28.5594, 57.5104, 52.9454, 43.2152, 50.0022, 30.1813, 26.4571, 14.6247, 83.5652, -71.3831, 70.8659, -110.274, 226.5, -104, 279.609, -112.655, 401.045, -125.355, 470.097, -121.386, 493.115, -124.561, 512.65, -126.443, 553.013, -123.08, 565.627, -117.614, 575.187, -109.539, 599.47, -119.799, 656.617, -112.655, 693.921, -75.3516, 736.781, -59.4775, 802.831, 23.1422, 831.436, 95.1857, 828.929, 148.158, -42.3695, 151.722, -50.9053, 113.43 )
+
+[node name="tranquilon" type="AudioStreamPlayer2D" parent="musica2"]
+stream = ExtResource( 16 )
+
 [connection signal="body_entered" from="piedras2" to="piedras2" method="_on_piedras2_body_entered"]
 [connection signal="body_exited" from="piedras2" to="piedras2" method="_on_piedras2_body_exited"]
+[connection signal="timeout" from="piedras2/Timer" to="piedras2" method="_on_Timer_timeout"]
 [connection signal="body_entered" from="espada" to="prota" method="_on_espada_body_entered"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="musica" to="musica" method="_on_musica_body_entered"]
 [connection signal="body_exited" from="musica" to="musica" method="_on_musica_body_exited"]
 [connection signal="body_entered" from="bloqueodezona" to="bloqueodezona" method="_on_bloqueodezona_body_entered"]
+[connection signal="body_entered" from="musica2" to="musica2" method="_on_musica2_body_entered"]
+[connection signal="body_exited" from="musica2" to="musica2" method="_on_musica2_body_exited"]

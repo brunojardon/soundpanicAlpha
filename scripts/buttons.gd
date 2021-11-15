@@ -5,7 +5,7 @@ func _on_journeyButton_pressed():
 	print("Journey")
 
 func _on_playButton_pressed():
-	get_tree().change_scene("res://scene/mains/battleScene.tscn")
+	get_tree().change_scene("res://scene/mains/journeyScene.tscn")
 	print("Jugar")
 
 func _on_optionsButton_pressed():

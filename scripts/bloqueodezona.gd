@@ -7,3 +7,5 @@ func _physics_process(delta):
 func _on_bloqueodezona_body_entered(body):
 	print("necesitas el amuleto para pasar")
 	pass # Replace with function body.
+
+

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/journey_tranquilon.mp3-a46c7087bce8f807eeeaf5d6ebe79688.mp3str"
+
+[deps]
+
+source_file="res://sounds/music/journey_tranquilon.mp3"
+dest_files=[ "res://.import/journey_tranquilon.mp3-a46c7087bce8f807eeeaf5d6ebe79688.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
