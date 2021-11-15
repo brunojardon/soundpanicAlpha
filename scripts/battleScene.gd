@@ -15,13 +15,15 @@ func _ready():
 func _on_bloque_area_entered(area):
 	i=i+1
 	cura=cura+1
-	print(i)
+	print(global.salud)
 	if cura==10:
-		curar()
+		global.salud=global.salud+10
+		print("se cura")
+		cura=0
 	if i==1062:
 		print("Termina la batalla")
 		get_tree().change_scene("res://scene/mains/journeyScene.tscn")
+	if global.salud > 100:
+		global.salud=100
 
-func curar():
-	print("Se cura")
-	cura=0
+

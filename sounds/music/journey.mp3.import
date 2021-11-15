@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/journey.mp3-46fd0afef73536acf5f3a309fc7e25f7.mp3str"
+
+[deps]
+
+source_file="res://sounds/music/journey.mp3"
+dest_files=[ "res://.import/journey.mp3-46fd0afef73536acf5f3a309fc7e25f7.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
