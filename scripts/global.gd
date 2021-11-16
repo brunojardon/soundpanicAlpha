@@ -9,3 +9,4 @@ var seora1habla=false
 var seora2habla=false
 var piedrasrotas=false
 var cura=0
+var vete=false

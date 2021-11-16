@@ -11,8 +11,13 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="."]
-margin_left = 1301.13
-margin_top = 45.7581
-margin_right = 1423.13
-margin_bottom = 59.7581
-text = "toma este amuleto"
+margin_left = 1323.13
+margin_top = 33.7581
+margin_right = 1449.13
+margin_bottom = 64.7581
+rect_scale = Vector2( 0.8, 0.8 )
+text = "toma este amuleto,
+ahora ve a la cuidad"
+__meta__ = {
+"_edit_use_anchors_": false
+}

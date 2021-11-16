@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://scene/props/espada.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scene/props/tengu(prota)journey.tscn" type="PackedScene" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://scripts/journeyScene.gd" type="Script" id=18]
 [ext_resource path="res://scene/props/textoPiedrasrompibles.tscn" type="PackedScene" id=19]
 [ext_resource path="res://scene/props/Control2.tscn" type="PackedScene" id=20]
+[ext_resource path="res://scene/props/Control3.tscn" type="PackedScene" id=21]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 8.26987
@@ -112,14 +113,16 @@ polygon = PoolVector2Array( 1605, 56, 1604, 483, 1624, 485, 1620, 47 )
 
 [node name="Area2D" parent="." instance=ExtResource( 13 )]
 
-[node name="prota" parent="." instance=ExtResource( 2 )]
-position = Vector2( 102, 308 )
-
 [node name="Control" parent="." instance=ExtResource( 15 )]
 
 [node name="textoPiedrasrompibles" parent="." instance=ExtResource( 19 )]
 
 [node name="Control2" parent="." instance=ExtResource( 20 )]
+
+[node name="prota" parent="." instance=ExtResource( 2 )]
+position = Vector2( 98.6021, 306.249 )
+
+[node name="Control3" parent="." instance=ExtResource( 21 )]
 
 [connection signal="body_entered" from="espada" to="prota" method="_on_espada_body_entered"]
 [connection signal="body_entered" from="portalBattleScene" to="portalBattleScene" method="_on_Area2D_body_entered"]

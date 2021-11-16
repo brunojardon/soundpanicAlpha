@@ -24,9 +24,11 @@ shape = SubResource( 1 )
 position = Vector2( -17.9726, -27.7846 )
 scale = Vector2( 1.12486, 1.17837 )
 frames = ExtResource( 3 )
-frame = 1
 speed_scale = 0.4
 playing = true
 
+[node name="Timer" type="Timer" parent="."]
+
 [connection signal="body_entered" from="." to="." method="_on_seora2_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_seora2_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

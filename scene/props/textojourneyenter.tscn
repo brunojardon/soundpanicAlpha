@@ -19,7 +19,8 @@ margin_left = 361.927
 margin_top = 263.509
 margin_right = 504.927
 margin_bottom = 277.509
-text = "ENTER para interactuar"
+text = "ENTER para interactuar
+con personas"
 __meta__ = {
 "_edit_use_anchors_": false
 }
