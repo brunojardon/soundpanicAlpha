@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scripts/Control2.gd" type="Script" id=1]
+
+[node name="Control2" type="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 1301.13
+margin_top = 45.7581
+margin_right = 1423.13
+margin_bottom = 59.7581
+text = "toma este amuleto"

@@ -13,7 +13,7 @@ func _physics_process(delta):
 	while global.amuleto==false and Input.is_action_just_pressed("enter") and global.seora1habla==true:
 		print("No podras pasar hasta que hables con marina")
 		break
-	if Input.is_action_just_pressed("enter") and global.amuleto==true:
+	if Input.is_action_just_pressed("enter") and global.amuleto==true and global.seora1habla==true:
 		print("suerte, la vas a necesitar") 
 
 func _on_seora_body_entered(body):
