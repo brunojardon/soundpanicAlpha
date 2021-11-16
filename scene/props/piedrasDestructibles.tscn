@@ -25,7 +25,7 @@ rotation = 0.261799
 texture = ExtResource( 2 )
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="piedras2"]
-position = Vector2( -51, -13 )
+position = Vector2( -46.5051, -17.4949 )
 polygon = PoolVector2Array( 19.9254, -15.2455, 11.4816, -18.9763, 5.58234, -23.4597, 5.81836, -17.0886, 16.2009, -9.53757, 28.9432, -2.4585, 47.6754, 15.7545, 66.2635, 36.4439, 80.5663, 44.3899, 35.4254, -11.2455 )
 
 [connection signal="body_entered" from="." to="." method="_on_piedras2_body_entered"]

@@ -14,6 +14,5 @@ func losseLife(object):
 	print(global.salud)
 	if global.salud <= 0:
 		queue_free()
-
 		get_tree().change_scene("res://scene/mains/pantalla de perdida.tscn")
 
