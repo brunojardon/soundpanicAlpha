@@ -9,9 +9,6 @@ func _on_Timer_timeout():
 	new_proyectil.position = Vector2(765, 450)
 	get_parent().add_child(new_proyectil)
 
-func _ready():
-	OS.set_window_title("mecanica") #Coloca el titulo de ventana
-
 func _on_bloque_area_entered(area):
 	i=i+1
 	cura=cura+1

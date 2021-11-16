@@ -19,13 +19,14 @@ func _physics_process(delta):
 	input_vector.x = Input.get_action_strength("derecha") - Input.get_action_strength("izquierda")
 	input_vector.y = Input.get_action_strength("abajo") - Input.get_action_strength("arriba")
 	input_vector = input_vector.normalized()
-	#if Input.is_action_just_pressed("derecha") or Input.is_action_just_pressed("arriba") or Input.is_action_just_pressed("izquierda") or Input.is_action_just_pressed("abajo"):
-	#	$AnimatedSprite.play()
-	#else:
-	#	$AnimatedSprite.stop()
+	if Input.is_action_just_pressed("derecha"):
+		$AnimatedSprite.play("tenguWalkDer")
+	elif Input.is_action_just_pressed("izquierda"):
+		$AnimatedSprite.play("tenguWalkIzq")
+	else:
+		pass
 	if Input.is_action_just_pressed("key-e") and espada==true:
-		$AnimatedSprite.play()
-		
+		$AnimatedSprite.play("tenguAttack")
 
 	if input_vector != Vector2.ZERO:
 		velocity = velocity.move_toward(input_vector * maxSpeed, acceleration * delta)

@@ -7,7 +7,7 @@ var vida=100
 func _physics_process(delta):
 	if Input.is_action_just_pressed("enter") and habla==true:
 		print("Toma este amuleto")
-		global.mamita=true
+		global.amuleto=true
 
 	if Input.is_action_just_pressed("key-e") and habla==true and espada==true:
 		print("No me pegues malnacido")

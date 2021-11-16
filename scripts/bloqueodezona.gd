@@ -1,7 +1,7 @@
 extends Area2D
 
 func _physics_process(delta):
-	if global.mamita==true:
+	if global.amuleto==true:
 		queue_free()
 
 func _on_bloqueodezona_body_entered(body):
