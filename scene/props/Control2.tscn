@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scripts/Control2.gd" type="Script" id=1]
+[ext_resource path="res://textures/props/box.png" type="Texture" id=2]
+[ext_resource path="res://textures/props/boxviejinfacha.png" type="Texture" id=3]
 
 [node name="Control2" type="Control"]
 margin_right = 40.0
@@ -10,14 +12,24 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="box" type="Sprite" parent="."]
+position = Vector2( 1342.28, 44.2721 )
+scale = Vector2( 0.830905, 0.878262 )
+texture = ExtResource( 2 )
+
 [node name="Label" type="Label" parent="."]
-margin_left = 1323.13
-margin_top = 33.7581
-margin_right = 1449.13
-margin_bottom = 64.7581
+margin_left = 1307.02
+margin_top = 31.8852
+margin_right = 1433.02
+margin_bottom = 62.8852
 rect_scale = Vector2( 0.8, 0.8 )
 text = "toma este amuleto,
 ahora ve a la cuidad"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="boxviejinfacha" type="Sprite" parent="."]
+position = Vector2( 1286.24, 44.0442 )
+scale = Vector2( 0.879174, 0.859534 )
+texture = ExtResource( 3 )

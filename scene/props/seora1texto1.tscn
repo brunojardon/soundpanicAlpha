@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scripts/seora1texto1.gd" type="Script" id=1]
+[ext_resource path="res://textures/props/box.png" type="Texture" id=2]
+[ext_resource path="res://textures/props/boxviejinfacha.png" type="Texture" id=3]
 
 [node name="Control" type="Control"]
 margin_right = 40.0
@@ -10,16 +12,25 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="box" type="Sprite" parent="."]
+position = Vector2( 630.471, 168.568 )
+scale = Vector2( 0.964853, 0.96162 )
+texture = ExtResource( 2 )
+
 [node name="Label" type="Label" parent="."]
-margin_left = 580.489
-margin_top = 147.588
-margin_right = 819.489
-margin_bottom = 195.588
-rect_scale = Vector2( 0.7, 0.7 )
-text = "tienes que hablar con
-marina, ella te dara el
-amuleto para poder
- entrar a la cuidad"
+margin_left = 586.5
+margin_top = 153.5
+margin_right = 808.5
+margin_bottom = 203.5
+rect_scale = Vector2( 0.6, 0.6 )
+text = "tienes que hablar con marina, 
+ella te dara el amuleto para 
+poder entrar a la cuidad"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="boxviejinfacha" type="Sprite" parent="."]
+position = Vector2( 566, 168.375 )
+scale = Vector2( 1.01613, 0.960937 )
+texture = ExtResource( 3 )

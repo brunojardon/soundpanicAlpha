@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scripts/Control3.gd" type="Script" id=1]
+[ext_resource path="res://textures/props/box.png" type="Texture" id=2]
+[ext_resource path="res://textures/props/boxviejinfacha.png" type="Texture" id=3]
 
 [node name="Control3" type="Control"]
 margin_right = 40.0
@@ -10,11 +12,24 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="box" type="Sprite" parent="."]
+position = Vector2( 1359.39, 42.5282 )
+scale = Vector2( 0.900728, 0.82182 )
+texture = ExtResource( 2 )
+
 [node name="Label" type="Label" parent="."]
-margin_left = 1324.33
-margin_top = 33.7728
-margin_right = 1472.33
-margin_bottom = 64.7728
+margin_left = 1315.09
+margin_top = 30.2092
+margin_right = 1463.09
+margin_bottom = 61.2092
 rect_scale = Vector2( 0.8, 0.8 )
 text = "ya deja de perder el
 tiempo y ve a la ciudad"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="boxviejinfacha" type="Sprite" parent="."]
+position = Vector2( 1298.14, 42.0828 )
+scale = Vector2( 0.885055, 0.805116 )
+texture = ExtResource( 3 )

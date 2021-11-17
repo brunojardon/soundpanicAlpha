@@ -119,10 +119,10 @@ polygon = PoolVector2Array( 1605, 56, 1604, 483, 1624, 485, 1620, 47 )
 
 [node name="Control2" parent="." instance=ExtResource( 20 )]
 
+[node name="Control3" parent="." instance=ExtResource( 21 )]
+
 [node name="prota" parent="." instance=ExtResource( 2 )]
 position = Vector2( 98.6021, 306.249 )
-
-[node name="Control3" parent="." instance=ExtResource( 21 )]
 
 [connection signal="body_entered" from="espada" to="prota" method="_on_espada_body_entered"]
 [connection signal="body_entered" from="portalBattleScene" to="portalBattleScene" method="_on_Area2D_body_entered"]
