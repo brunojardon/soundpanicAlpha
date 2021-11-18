@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://textures/background/LIANN_STAGEexpand.png" type="Texture" id=1]
+[ext_resource path="res://textures/background/liann_stage1.png" type="Texture" id=1]
 [ext_resource path="res://scene/props/prota.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scripts/battleScene.gd" type="Script" id=3]
 [ext_resource path="res://textures/railes/RailFrontal.png" type="Texture" id=4]
@@ -8,7 +8,7 @@
 [ext_resource path="res://textures/perso/Liannexpandido.png" type="Texture" id=6]
 [ext_resource path="res://scripts/life.gd" type="Script" id=7]
 [ext_resource path="res://scene/mains/pauseScene.tscn" type="PackedScene" id=8]
-[ext_resource path="res://sounds/music/club_song.mp3" type="AudioStream" id=10]
+[ext_resource path="res://sounds/music/battleSceneMusic.mp3" type="AudioStream" id=10]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 21.1955
@@ -17,23 +17,22 @@ radius = 21.1955
 script = ExtResource( 3 )
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 0.6
 autostart = true
 
 [node name="background" type="Sprite" parent="."]
-position = Vector2( -0.000248721, -0.000121627 )
-scale = Vector2( 0.426639, 0.374988 )
+position = Vector2( 512, 300 )
+scale = Vector2( 2.048, 2.5 )
 texture = ExtResource( 1 )
-offset = Vector2( 1200.04, 800.018 )
 
 [node name="RailFrontal" type="Sprite" parent="background"]
-position = Vector2( 1250, 1200 )
-scale = Vector2( 3.49076, 2.66675 )
+position = Vector2( 10.3996, 59.9942 )
+scale = Vector2( 0.727194, 0.4 )
 texture = ExtResource( 4 )
 
 [node name="boss" type="Sprite" parent="background"]
-position = Vector2( 1981.99, 1170.7 )
-scale = Vector2( 0.452859, 0.411766 )
+position = Vector2( 162.888, 55.5993 )
+scale = Vector2( 0.0943395, 0.0617629 )
 texture = ExtResource( 6 )
 
 [node name="bloque" type="Area2D" parent="."]
@@ -50,7 +49,7 @@ texture = ExtResource( 5 )
 shape = SubResource( 1 )
 
 [node name="prota" parent="." instance=ExtResource( 2 )]
-position = Vector2( 150, 476 )
+position = Vector2( 144, 448 )
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 position = Vector2( 263.902, 450.845 )
@@ -73,10 +72,26 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ProgressBar" type="ProgressBar" parent="Control"]
-margin_right = 1023.0
-margin_bottom = 55.0
+[node name="musicBar" type="ProgressBar" parent="Control"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -244.5
+margin_top = 23.0
+margin_right = 244.5
+margin_bottom = 59.0
 max_value = 536.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="protaSaludBar" type="ProgressBar" parent="Control"]
+margin_left = 67.0
+margin_top = 325.0
+margin_right = 237.0
+margin_bottom = 350.0
+min_value = 100.0
+max_value = 0.0
+value = 100.0
 __meta__ = {
 "_edit_use_anchors_": false
 }

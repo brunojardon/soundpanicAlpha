@@ -19,3 +19,19 @@ func losseLife(object):
 		queue_free()
 		get_tree().change_scene("res://scene/mains/pantalla de perdida.tscn")
 
+func _input(event):
+	if Input.is_action_just_pressed("key-e"):
+		$protaAnimated.play("tenguAttack")
+		print("chau xd")
+		$idleAnimation.start()
+		print("chau dx")
+	elif Input.is_action_just_pressed("key-a"):
+		$protaAnimated.play("tenguAttack2")
+		print("chau xd")
+		$idleAnimation.start()
+		print("chau dx")
+
+func _on_idleAnimation_timeout():
+	print("hola xd")
+	$protaAnimated.play("tenguAttackIdle")
+	$idleAnimation.stop()

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/newZoneJourney.mp3-8518ee16723335e6f9553a919b71130d.mp3str"
+
+[deps]
+
+source_file="res://sounds/music/newZoneJourney.mp3"
+dest_files=[ "res://.import/newZoneJourney.mp3-8518ee16723335e6f9553a919b71130d.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

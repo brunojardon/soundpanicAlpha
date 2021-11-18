@@ -7,7 +7,7 @@
 [ext_resource path="res://textures/buttons/play_button.png" type="Texture" id=5]
 [ext_resource path="res://textures/buttons/exit_button.png" type="Texture" id=6]
 [ext_resource path="res://textures/background/soundPanicTitile.png" type="Texture" id=7]
-[ext_resource path="res://sounds/music/prueba_4.mp3" type="AudioStream" id=8]
+[ext_resource path="res://sounds/music/mainMenuMusic.mp3" type="AudioStream" id=8]
 
 [node name="Menu" type="Node2D"]
 script = ExtResource( 4 )
@@ -31,13 +31,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="journeyButton" type="Button" parent="buttons"]
-visible = false
+[node name="button" type="Button" parent="buttons"]
 margin_left = 149.586
 margin_top = 240.986
 margin_right = 256.586
 margin_bottom = 287.986
-text = "journey"
+text = "PotalButton"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -80,7 +79,7 @@ __meta__ = {
 stream = ExtResource( 8 )
 autoplay = true
 
-[connection signal="pressed" from="buttons/journeyButton" to="buttons" method="_on_journeyButton_pressed"]
+[connection signal="pressed" from="buttons/button" to="buttons" method="_on_button_pressed"]
 [connection signal="pressed" from="buttons/playButton" to="buttons" method="_on_playButton_pressed"]
 [connection signal="pressed" from="buttons/optionsButton" to="buttons" method="_on_optionsButton_pressed"]
 [connection signal="pressed" from="buttons/exitButton" to="buttons" method="_on_exitButton_pressed"]

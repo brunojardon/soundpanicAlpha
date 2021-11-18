@@ -2,7 +2,8 @@
 
 [ext_resource path="res://textures/perso/jiji.png" type="Texture" id=1]
 [ext_resource path="res://scripts/señora.gd" type="Script" id=2]
-[ext_resource path="res://animations/dialogobubble.tres" type="SpriteFrames" id=3]
+[ext_resource path="res://animations/interactionBubble/dialogobubble.tres" type="SpriteFrames" id=3]
+
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 22.0895

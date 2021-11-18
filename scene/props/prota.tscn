@@ -1,8 +1,43 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=23 format=2]
 
-[ext_resource path="res://animations/tenguAttack/tenguAttack.tres" type="SpriteFrames" id=1]
-[ext_resource path="res://scripts/protaAnimated.gd" type="Script" id=2]
+[ext_resource path="res://animations/tenguBattle/tenguAttack/t1.png" type="Texture" id=1]
+[ext_resource path="res://animations/tenguBattle/tenguAttack/t6.png" type="Texture" id=2]
 [ext_resource path="res://scripts/prota.gd" type="Script" id=3]
+[ext_resource path="res://animations/tenguBattle/tenguAttack/t3.png" type="Texture" id=4]
+[ext_resource path="res://animations/tenguBattle/tenguAttack/t10.png" type="Texture" id=5]
+[ext_resource path="res://animations/tenguBattle/tenguAttack/t7.png" type="Texture" id=6]
+[ext_resource path="res://animations/tenguBattle/tenguAttack/t9.png" type="Texture" id=7]
+[ext_resource path="res://animations/tenguBattle/tenguAttack/t2.png" type="Texture" id=8]
+[ext_resource path="res://animations/tenguBattle/tenguAttack/t8.png" type="Texture" id=9]
+[ext_resource path="res://animations/tenguBattle/tenguAttack/t4.png" type="Texture" id=10]
+[ext_resource path="res://animations/tenguBattle/tenguAttack/t5.png" type="Texture" id=11]
+[ext_resource path="res://animations/tenguBattle/tenguAttack2/t2.png" type="Texture" id=12]
+[ext_resource path="res://animations/tenguBattle/tenguAttack2/t7.png" type="Texture" id=13]
+[ext_resource path="res://animations/tenguBattle/tenguAttack2/t3.png" type="Texture" id=14]
+[ext_resource path="res://animations/tenguBattle/tenguAttack2/t8.png" type="Texture" id=15]
+[ext_resource path="res://animations/tenguBattle/tenguAttack2/t4.png" type="Texture" id=16]
+[ext_resource path="res://animations/tenguBattle/tenguAttack2/t5.png" type="Texture" id=17]
+[ext_resource path="res://animations/tenguBattle/tenguAttack2/t6.png" type="Texture" id=18]
+[ext_resource path="res://animations/tenguBattle/tenguAttack2/t9.png" type="Texture" id=19]
+[ext_resource path="res://animations/tenguBattle/tenguAttack2/t1.png" type="Texture" id=20]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 8 ), ExtResource( 4 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 2 ), ExtResource( 6 ), ExtResource( 9 ), ExtResource( 7 ), ExtResource( 5 ), ExtResource( 7 ), ExtResource( 9 ), ExtResource( 6 ), ExtResource( 2 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 4 ), ExtResource( 8 ) ],
+"loop": false,
+"name": "tenguAttack",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 14 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 13 ), ExtResource( 15 ), ExtResource( 19 ), ExtResource( 15 ), ExtResource( 13 ), ExtResource( 18 ), ExtResource( 17 ), ExtResource( 16 ) ],
+"loop": false,
+"name": "tenguAttack2",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 1 ), ExtResource( 1 ), ExtResource( 20 ), ExtResource( 1 ) ],
+"loop": false,
+"name": "tenguAttackIdle",
+"speed": 15.0
+} ]
 
 [sub_resource type="SegmentShape2D" id=1]
 b = Vector2( 0, 100 )
@@ -14,12 +49,15 @@ __meta__ = {
 }
 
 [node name="protaAnimated" type="AnimatedSprite" parent="."]
-position = Vector2( -8, -36 )
 scale = Vector2( 2, 2 )
-frames = ExtResource( 1 )
-animation = "tenguAttack"
-script = ExtResource( 2 )
+frames = SubResource( 2 )
+animation = "tenguAttackIdle"
 
 [node name="protaCollision" type="CollisionShape2D" parent="."]
-position = Vector2( 38, -75 )
+position = Vector2( 43, -47 )
 shape = SubResource( 1 )
+
+[node name="idleAnimation" type="Timer" parent="."]
+wait_time = 0.5
+
+[connection signal="timeout" from="idleAnimation" to="." method="_on_idleAnimation_timeout"]
