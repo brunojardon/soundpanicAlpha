@@ -5,7 +5,7 @@
 [ext_resource path="res://animations/dialogobubble.tres" type="SpriteFrames" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 32.9593
+radius = 29.195
 
 [node name="señora2" type="Area2D"]
 position = Vector2( 1112, 142 )
@@ -17,18 +17,25 @@ scale = Vector2( 2.39288, 2.15408 )
 texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 10.8456, -0.500554 )
+position = Vector2( -28.8662, 8.17591 )
 shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( -17.9726, -27.7846 )
 scale = Vector2( 1.12486, 1.17837 )
 frames = ExtResource( 3 )
-frame = 2
+frame = 1
 speed_scale = 0.4
 playing = true
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2( 47.9595, -21.7635 )
+scale = Vector2( 0.122129, 0.175564 )
+polygon = PoolVector2Array( -370.699, 68.2491, -312.341, 64.4432, -325.108, 32.7274, -361.582, 33.996, -376.171, 44.145 )
 
 [connection signal="body_entered" from="." to="." method="_on_seora2_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_seora2_body_exited"]

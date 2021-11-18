@@ -19,7 +19,7 @@ position = Vector2( 1.3454, -3.913 )
 scale = Vector2( 1.28125, 1.53333 )
 frames = ExtResource( 2 )
 animation = "tenguWalkDer"
-frame = 2
+frame = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 0.0326809

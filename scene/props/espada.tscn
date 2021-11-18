@@ -18,13 +18,13 @@ rotation = 1.19048
 shape = SubResource( 1 )
 
 [node name="Sprite2" type="Sprite" parent="."]
-position = Vector2( -24.8155, 17.4285 )
+position = Vector2( -25.8268, 16.6535 )
 rotation = 1.06584
-scale = Vector2( 0.560418, 1.19631 )
+scale = Vector2( 0.437489, 0.840705 )
 texture = ExtResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( -33.8541, 1.55905 )
+position = Vector2( -39.8677, 4.23175 )
 frames = ExtResource( 1 )
 frame = 2
 speed_scale = 0.4
