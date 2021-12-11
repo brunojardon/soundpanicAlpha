@@ -28,7 +28,6 @@ func _physics_process(delta):
 		espada=true
 	if Input.is_action_just_pressed("key-e") and espada==true:
 		$AnimatedSprite.play("tenguAttack")
-
 	if input_vector != Vector2.ZERO:
 		velocity = velocity.move_toward(input_vector * maxSpeed, acceleration * delta)
 	else:

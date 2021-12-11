@@ -15,6 +15,9 @@ position = Vector2( 0.00311281, -0.00889696 )
 scale = Vector2( 0.511968, 0.499904 )
 texture = ExtResource( 1 )
 offset = Vector2( 999.896, 600.215 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Control" type="Control" parent="."]
 margin_right = 144.0
@@ -47,7 +50,6 @@ scale = Vector2( 0.05, 0.05 )
 texture = ExtResource( 5 )
 
 [node name="GridContainer" type="GridContainer" parent="Control/volumeBar"]
-visible = false
 margin_left = -92.314
 margin_top = -37.406
 margin_right = 400.686
@@ -57,7 +59,9 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="Control/volumeBar/GridContainer"]
+margin_right = 56.0
 margin_bottom = 14.0
+text = "volumen"
 
 [node name="return" type="Button" parent="Control"]
 margin_left = 29.0
